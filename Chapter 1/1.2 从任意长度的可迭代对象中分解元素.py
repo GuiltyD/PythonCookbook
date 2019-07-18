@@ -8,7 +8,6 @@ my_tuple = [
 	('foo',2,5),
 	('bar',3,7),
 	('bar',5,6),
-	('bar',7,9),
 ]
 def do_foo(x,y):
 	print('foo=',x+y)
