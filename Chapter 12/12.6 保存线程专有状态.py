@@ -1,0 +1,1 @@
+#threading.local为每个线程保存状态

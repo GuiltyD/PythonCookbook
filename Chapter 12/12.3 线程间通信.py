@@ -2,12 +2,13 @@ import heapq
 import threading
 import time
 
+
 class PriorityQueue:
     def __init__(self):
         self._queue = []
         self._index = 0
         self._cv = threading.Condition()
-    
+
     def put(self,item,priority):
         with self._cv:
             heapq.heappush(self._queue,[-priority,self._index,item])
@@ -33,13 +34,11 @@ def productor():
         time.sleep(0.5)
         priority.put(i,j)
     sign =False
-    
 
 def consumer():
     while sign:
         time.sleep(0.5)
         priority.get()
-
 
 p = threading.Thread(target = productor)
 c = threading.Thread(target = consumer)
